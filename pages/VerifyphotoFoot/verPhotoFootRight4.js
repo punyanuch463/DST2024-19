@@ -1,0 +1,114 @@
+import React, { useEffect, useState } from "react";
+import styles from "./verphoto.module.css";
+import { useRouter } from "next/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  fetchSessionData,
+  saveImageToDatabase,
+} from "../../pages/api/imageService";
+import ImagePreview from "../../components/ImagePreview";
+import FooterActions from "../../components/FooterActions";
+import withAuth from "../../hoc/withAuth"; 
+import { updatePageTitle } from "../../utils/routeTitle";
+const verPhotoFootRight4 = () => {
+  const [capturedImage, setCapturedImage] = useState(null);
+  const [frameImage, setFrameImage] = useState(null);
+  const [userId, setUserId] = useState(null);
+  const router = useRouter();
+  useEffect(() => {
+    updatePageTitle(router.pathname);
+    const handleRouteChange = (url) => {
+      updatePageTitle(url);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router]);
+  useEffect(() => {
+    const initializeSession = async () => {
+      const sessionData = await fetchSessionData();
+      if (sessionData?.userId) setUserId(sessionData.userId);
+    };
+    initializeSession();
+  }, []);
+
+  useEffect(() => {
+    const image = localStorage.getItem("capturedImage");
+    const frame = localStorage.getItem("frameImage");
+    if (image) setCapturedImage(image);
+    if (frame) setFrameImage(frame);
+  }, []);
+
+  const handleBack = () => {
+    router.push("/UserPage/HomePageUser");
+  };
+
+  const handleSaveImage = async () => {
+    if (capturedImage && userId) {
+      const imageCategoryId = 8;
+      const side = "right";
+      const fileName = "imagefootright4.png";
+      const orderId = localStorage.getItem("orderId");
+  
+      if (orderId) {
+        const result = await saveImageToDatabase(capturedImage, userId, imageCategoryId, side, fileName, orderId);
+    if (result?.id) {
+      
+          const type = "อุ้งเท้าปกติ"
+          const footData = {
+            userId,
+            type,
+            A: 27.5,
+            B: 12.0,
+            C: 9.0,
+            D: 24.0,
+            E: 6.8,
+            F: 13.0,
+            G: 6.12,
+            H: 4.5,
+            I: 12.12
+          };
+  
+          try {
+            const footResponse = await fetch("/api/footData", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(footData),
+            });
+  
+          } catch (error) {
+            
+          }
+  
+        router.push("/UserPage/UserInfo");
+      }
+    }
+  }
+  };
+  
+
+  return (
+    <main className={styles.main}>
+      <FontAwesomeIcon
+        icon={faArrowLeft}
+        className={styles.backIcon}
+        onClick={handleBack}
+      />
+      <p className={styles.footTextTitle}>ภาพวาดเท้าบนกระดาษข้างขวา</p>
+      <ImagePreview capturedImage={capturedImage} frameImage={frameImage} />
+      <p className={styles.footTextSubTitle}>รูปภาพของคุณสามารถใช้งานได้</p>
+      <FooterActions
+        onConfirm={handleSaveImage}
+        retakePath="/takePhotoFoot/takePhotoFootRight4"
+      />
+    </main>
+  );
+};
+
+export default withAuth(verPhotoFootRight4);

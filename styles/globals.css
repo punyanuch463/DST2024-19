@@ -1,0 +1,2818 @@
+/* globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Sukhumvit+Set&display=swap");
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ปรับสไตล์ปุ่มเมื่อถูกปิดใช้งาน */
+.primary-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.primary-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* globals.css */
+p.alert{
+  color: red
+}
+
+body {
+  font-family: "Sukhumvit Set", sans-serif;
+  background-color: #fefaf6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  font-family: 'Sukhumvit Set', sans-serif;
+  padding: 20px;
+  padding-top: 20px;
+  margin: auto;
+  background: transparent;
+  border-radius: 8px;
+}
+
+.header-with-back-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #102c57;
+}
+.header-home-icon {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* ชิดขวา */
+  align-items: center; /* จัดให้อยู่ในแนวตั้ง */
+}
+
+.top-right-icon {
+  display: flex;
+  align-items: center; /* จัดให้อยู่ตรงกลางในแนวตั้ง */
+  gap: 10px; /* ระยะห่างระหว่างไอคอนและรูปโปรไฟล์ */
+}
+
+.top-right-icon {
+  display: flex; /* จัดเรียงไอคอนและรูปโปรไฟล์ข้างกัน */
+  align-items: flex-end; /* จัดให้อยู่ตรงกลางในแนวตั้ง */
+  gap: 10px; /* เพิ่มระยะห่างระหว่างไอคอนและรูป */
+}
+
+.notification-icon {
+  font-size: 20px;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.profile-pic {
+  width: 20px; 
+  height: 20px; 
+  border-radius: 50%; 
+  object-fit: cover; /* ครอบภาพให้อยู่ในกรอบวงกลม */
+  border: 2px solid #102c57;
+  align-items: flex-end; 
+}
+
+h1 {
+  font-size: 24px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  color: #333;
+  font-family: "Sukhumvit Set", sans-serif;
+  font-weight: 900;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: "Sukhumvit Set", sans-serif;
+  margin-bottom: 24px;
+}
+
+.subtitle a {
+  color: #102c57;
+  font-weight: 700;
+}
+
+label {
+  font-family: 'Sukhumvit Set', sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  padding-right: 30px; /* เว้นที่ให้ไอคอน */
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.password-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #102c57;
+}
+
+input[type="text"],
+input[type="gender"],
+input[type="email"],
+input[type="password"],
+input[type="phoneNUmber"],
+input[type="age"],
+input[type="date"],
+input[type="address"],
+input[type="heightCM"],
+input[type="shoeSizeEU"],
+input[type="shoeSizeCM"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: white;
+  /* background-color: #e0e0e0; */
+}
+
+.input-group input:focus {
+  border-color: #102c57;
+  outline: none;
+}
+
+select[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
+  /* background-color: #e0e0e0; */
+  background-color: white;
+}
+
+.input-group select:focus {
+  border-color: #102c57;
+  outline: none;
+}
+
+textarea[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: "Sukhumvit Set", sans-serif;
+  /* background-color: #e0e0e0; */
+  background-color: white;
+}
+
+.show-password-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #0070f3;
+  margin-left: 8px;
+}
+
+.primary-btn-login {
+  font-family: "Sukhumvit Set", sans-serif;
+  width: 100%;
+  padding: 10px;
+  background-color: #102c57;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-top: 385px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.back-icon {
+  color: #102c57;
+}
+
+.status-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.circle {
+  border: 2px solid #e0e0e0; /* เพิ่มกรอบสีน้ำเงินเข้ม */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+.circle.active {
+  background-color: #fefaf6;
+  border: 2px solid #102c57; /* เพิ่มกรอบสีน้ำเงินเข้ม */
+  color: #102c57;
+}
+
+.circle.complete {
+  background-color: #102c57;
+  border: 2px solid #102c57; /* เพิ่มกรอบสีน้ำเงินเข้ม */
+  color: white;
+}
+
+.status-bar::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ccc;
+  z-index: 0;
+}
+
+.circle.active::before {
+  background-color: #0070f3;
+  width: 50%;
+  left: 50%;
+}
+
+.circle:not(.active)::before {
+  background-color: #ccc;
+  width: 100%;
+}
+
+.circle:first-child::before {
+  content: none;
+}
+
+/* สไตล์สำหรับ label */
+label {
+  font-size: 16px;
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+select {
+  width: 100%;
+  padding: 6px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  appearance: none; /* Hide default arrow */
+  font-family: "Sukhumvit Set", sans-serif;
+}
+
+.select-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+select.open {
+  font-family: "Sukhumvit Set", sans-serif;
+  border-color: #0070f3; 
+  background: #f0f0f0; 
+  background-size: 12px 12px;
+}
+
+.profile-image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border: 4px solid #102c57;
+}
+/* Icon กล้อง */
+.camera-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #102c57;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 16px;
+  color: white;
+  transform: translate(-25%, 25%); 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+
+}
+
+.profile-image-label {
+  position: relative;
+  display: inline-block;
+}
+
+.content-text {
+  font-family: "Sukhumvit Set", sans-serif;
+}
+
+.checkbox-container {
+  font-family: "Sukhumvit Set", sans-serif;
+  margin: 20px 0;
+}
+
+.checkbox-container span{
+  font-family: "Sukhumvit Set", sans-serif;
+  font-weight: 700;
+}
+
+.checkbox-label {
+  font-family: 'Sukhumvit Set', sans-serif;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-font {
+  font-family: "Sukhumvit Set", sans-serif; /* หรือ "Sukhumvit", sans-serif; */
+}
+
+.custom-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #102c57;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-checkbox.checked {
+  background-color: #102c57;
+}
+
+.checkmark {
+  color: white;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* CompletePage */
+.center-circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; /* Adjust as needed for spacing */
+  margin-bottom: 20px; /* Space between the circle and the button */
+}
+
+.center-circle {
+  width: 100px; /* Size of the circle */
+  height: 100px; /* Size of the circle */
+  border-radius: 50%;
+  background-color: white; /* White background */
+  border: 2px solid #27ae60; /* Border color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.center-circle svg {
+  color: #27ae60; /* Icon color */
+  font-size: 24px; /* Icon size */
+}
+
+.center-circle-text {
+  font-family: "Sukhumvit Set", sans-serif; /* Font family */
+  font-size: 16px; /* Font size */
+  color: #333; /* Text color */
+  text-align: center; /* Center text horizontally */
+  margin-bottom: 20px;
+}
+
+/* HomePage*/
+
+.menuBar {
+  display: flex;
+  justify-content: space-around; /* Space out items evenly */
+  align-items: center;
+}
+
+.menu-card {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  padding: 16px;
+}
+
+.menu-content {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 20px;
+  color: #333;
+  margin-right: 12px; /* ให้มีระยะห่างระหว่างไอคอนกับข้อความ */
+}
+
+.menu-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* ชิดซ้าย */
+}
+
+.label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #333;
+}
+
+.select-wrapper-setting {
+  position: relative;
+  width: 100%; /* กำหนดให้ select กว้างเต็มพื้นที่ */
+}
+
+.select-wrapper-setting select {
+  width: 100%;
+  padding-right: 30px; /* เพิ่มพื้นที่สำหรับไอคอน */
+  appearance: none; /* ซ่อนลูกศรปกติของ select */
+}
+
+.select-icon {
+  position: absolute;
+  right: 10px; /* วางไอคอนที่ขอบด้านขวา */
+  top: 50%; /* กำหนดให้ไอคอนอยู่ตรงกลางแนวตั้ง */
+  transform: translateY(-50%);
+  pointer-events: none; /* ไม่ให้ไอคอนขวางการคลิกที่ dropdown */
+}
+/*Menu Styles */
+.content-menu {
+  display: grid; /* ใช้ grid layout แทน flex */
+  grid-template-columns: repeat(2, 1fr); /* กำหนด 2 คอลัมน์ */
+  gap: 20px; /* ระยะห่างระหว่างไอเท็ม */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 48px;
+}
+
+.content-item {
+  display: flex;
+  flex-direction: column; /* จัดเรียงแนวตั้ง */
+  align-items: center; /* จัดให้อยู่กลาง */
+  justify-content: center; /* จัดกลางแนวตั้ง */
+  padding: 16px; /* Padding รอบๆ item */
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 8px; /* มุมโค้ง */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เงา */
+  background-color: white; /* สีพื้นหลัง */
+  color: #102c57;
+  transition: box-shadow 0.3s; /* เอฟเฟคตอน hover */
+  font-size: 24px;
+  border: 2px solid #102c57; /* เส้นขอบ */
+}
+
+.content-item span {
+  display: block;
+  text-align: center;
+  white-space: nowrap; /* Prevent text wrapping if needed */
+}
+
+.break-text {
+  white-space: pre-line; /* ตัดบรรทัดอัตโนมัติ */
+  text-align: center;
+  display: block;
+}
+
+.content-icon {
+  font-size: 40px; /* ขนาดของไอคอน */
+  margin-bottom: 8px; /* ระยะห่างจากข้อความ */
+
+}
+
+.content-icon:hover {
+color: white;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* ระยะห่างระหว่าง icon กับ title */
+}
+
+.menu-header .icon {
+  font-size: 20px;
+  color: #333;
+}
+
+.menu-header .label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #333;
+}
+
+/* HistoryPage */
+/* จัดการโครงสร้างหลักของหน้า */
+.historyPage {
+  /* max-width: 600px; */
+  margin: 0 auto; /* จัดกึ่งกลางหน้าจอ */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Sukhumvit Set", sans-serif;
+}
+
+/* จัดการ Search Bar */
+.searchBar {
+  display: flex;
+  flex-direction: column; /* แยกบรรทัดกัน */
+  gap: 20px; /* เว้นช่องว่างระหว่างแต่ละ search item */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+/* จัดกลุ่ม Order Code และ Status ในบรรทัดเดียวกัน */
+.orderStatusGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px;
+  width: 100%;
+}
+
+.searchStartEndDate {
+  display: flex;              /* ใช้ flexbox เพื่อจัดให้แสดงในแถวเดียว */
+  gap: 10px;                  /* ช่องว่างระหว่างทั้งสองช่อง */
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid #ccc; /* เส้นขอบ */
+  padding: 4px;
+}
+
+.startDate, .endDate {
+  flex: 1;                     /* ให้แต่ละช่องยืดให้มีขนาดเท่ากัน */
+}
+
+.calendar-icon {
+  margin-left: 8px;
+  margin-right: 10px;           
+  font-size: 18px;              
+  color: #102c57;
+}
+
+.startDate {
+  display: flex;                /* ใช้ flexbox */
+  align-items: center;         
+}
+
+.startDate input{
+  font-family: "Sukhumvit Set", sans-serif;
+  text-align: left;
+}
+
+.endDate {
+  padding-left: 0px;          /* ถ้าต้องการเว้นพื้นที่ซ้าย */
+}
+
+.endDate input{
+  font-family: "Sukhumvit Set", sans-serif;
+  text-align: left;
+}
+
+
+/* ช่องค้นหา */
+.searchItem{
+  display: flex;
+  align-items: center;
+  /* gap: 10px; */
+  border: 1px solid #ccc; /* เส้นขอบ */
+  border-radius: 20px; /* ขอบโค้งมน */
+  background-color: white;
+  padding: 4px;
+}
+
+.searchItem input {
+  font-family: "Sukhumvit Set", sans-serif;
+  flex: 1; /* ขยายช่อง input ให้เต็มพื้นที่ */
+  border: none;
+  padding: 8px;
+  font-size: 16px;
+  outline: none; /* เอาเส้นขอบตอนโฟกัสออก */
+  background-color: transparent;
+}
+
+/* สำหรับ select ใน orderStatusGroup */
+.select-wrapper {
+  position: relative;
+  max-width: 400px;
+  flex: 1;
+  width: 100%;
+}
+
+.select-wrapper select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 20px; /* ปัดมุมด้านขวาบน */
+  border-bottom-right-radius: 20px; /* ปัดมุมด้านขวาล่าง */
+  background-color: white;
+  appearance: none; /* ซ่อนลูกศรดรอปดาวน์เดิม */
+  box-sizing: border-box; /* เพื่อให้ padding ไม่ทำให้ select บาน */
+}
+
+.select-wrapper .select-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #333;
+}
+
+.searchItem input,
+.searchItem select,
+.react-datepicker__input-container input {
+  flex: 1; /* ขยายช่อง input ให้เต็มพื้นที่ */
+  border: none;
+  font-size: 16px;
+  outline: none; /* เอาเส้นขอบตอนโฟกัสออก */
+  background-color: transparent;
+}
+
+.searchItem input::placeholder,
+.react-datepicker__input-container input::placeholder {
+  color: #aaa;
+}
+
+/* ไอคอน */
+.searchItem svg {
+  color: #102c57; /* สีไอคอน */
+  margin-left: 16px;
+}
+
+.searchItemOrderId {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 20px; /* ปัดมุมด้านขวาบน */
+  border-bottom-left-radius: 20px; /* ปัดมุมด้านขวาล่าง */
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 0;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: white;
+  appearance: none; /* ซ่อนลูกศรดรอปดาวน์เดิม */
+  box-sizing: border-box; /* เพื่อให้ padding ไม่ทำให้ select บาน */
+}
+
+.searchItemOrderId input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  padding: 0px 0px 0px 20px;
+  font-family: "Sukhumvit Set", sans-serif;
+}
+
+.searchItemOrderId svg {
+  color: #102c57;
+}
+
+.searchItem.username {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 0px; /* ปัดมุมด้านขวาบน */
+  border-bottom-left-radius: 0px; /* ปัดมุมด้านขวาล่าง */
+}
+
+.orderCard {
+  background-color: white;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative; /* กำหนดให้สามารถใช้ z-index ได้ */
+  z-index: 2; /* ให้อยู่เหนือ element อื่นๆ */
+  font-family: "Sukhumvit Set", sans-serif;
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orderCode {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+.orderStatus.pending {
+  background-color: #FEFAF6; /* สีเหลือง */
+  border: 1px solid #f1c40f;
+  color: #f1c40f;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.orderStatus.completed {
+  background-color: #d4efdf; /* สีเขียว */
+  border: 1px solid #27ae60;
+  color: #27ae60;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.orderStatus.canceled {
+  background-color: #fbdddd; /* สีแดง */
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.orderSteps {
+  margin-top: 16px;
+  padding: 16px;
+  background-color: white;
+  border-radius: 8px;
+  position: relative;
+}
+
+.detailSteps {
+  margin-top: 16px;
+  padding: 16px;
+  margin: 0;
+  background-color: white;
+  border-radius: 8px;
+  position: relative;
+}
+
+.orderStep {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.detailStep {
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #828282;
+}
+
+.orderStep p {
+  margin-left: 16px; /* Space between dot and text */
+}
+
+.detailStep p {
+  margin-left: 0px; /* Space between dot and text */
+}
+
+.orderStep:last-child::after {
+  display: none; /* Hide the last dot's connecting line */
+}
+
+.submitDateContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* ระยะห่างระหว่างไอคอนและวันที่ */
+  margin-bottom: 16px; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+.submitDateContainer svg {
+  color: #102c57;
+}
+
+.submitDate {
+  font-size: 16px;
+  color: #828282;
+}
+
+.divider {
+  border: 1px solid #ddd;
+  margin: 16px 0;
+}
+
+.orderInfo {
+  font-size: 16px;
+  color: #828282;
+  margin-bottom: 16px;
+}
+
+.userDetail {
+  color: #1d1d1d; /* สีของข้อความ */
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.footInfoBtn,
+.view3DBtn {
+  background-color: transparent;
+  border: 1px solid #102c57;
+  font-family: "Sukhumvit Set", sans-serif;
+  color: #102c57;
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.footInfoBtn:hover,
+.view3DBtn:hover {
+  background-color: #102c57;
+  color: white;
+}
+
+/* InfoPage */
+.searchBar h1 {
+  margin-bottom: 0px;
+}
+
+.searchBar p {
+  margin-top: 0px;
+  font-size: 16px;
+}
+
+.detail-info {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* ระยะห่างระหว่างไอคอนและวันที่ */
+}
+
+.detail-info p {
+  margin-bottom: 0;
+}
+
+.detail-info svg {
+  font-size: 24px;
+}
+
+.foot-detail {
+  display: flex;
+  justify-content: center; /* จัดตรงกลางในแนวนอน */
+  align-items: center; /* จัดตรงกลางในแนวตั้ง (ถ้าต้องการ) */
+  height: 100%; /* ถ้าต้องการให้เต็มพื้นที่แนวตั้ง */
+  margin-top: 20px; /* ปรับ margin ให้เหมาะสม */
+}
+
+.foot-pic {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* เพิ่มสไตล์ตามต้องการ */
+}
+
+.grid-container {
+  overflow-y: auto; /* อนุญาตให้เลื่อนดูเนื้อหาถ้ามันเกินความสูง */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* สร้าง 2 คอลัมน์ */
+  grid-gap: 20px; /* ระยะห่างระหว่างแต่ละช่อง */
+  max-width: 600px; /* ขนาดสูงสุดของ grid */
+  margin: 20px auto; /* จัดให้อยู่ตรงกลาง */
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* จัดข้อความและช่องให้อยู่ตรงกลาง */
+}
+
+.grid-item p {
+  margin-bottom: 10px; /* เพิ่มระยะห่างระหว่าง text และ input */
+  justify-content: center;
+}
+
+.grid-item input {
+  padding: 10px;
+  width: 100%; /* ขยาย input ให้เต็มช่อง */
+  border: 1px solid #b7bcc6;
+  border-radius: 20px; /* เพิ่มมุมโค้ง */
+}
+.info-card {
+  background-color: #b7bcc6;
+  border: 1px solid #b7bcc6;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto; /* ให้การ์ดอยู่ตรงกลาง */
+}
+
+.info-row {
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* คอลัมน์แรกสำหรับตัวอักษรภาษาอังกฤษ, คอลัมน์ที่สองสำหรับคำอธิบาย */
+  gap: 10px;
+  padding: 10px 0; /* เพิ่ม padding ด้านบนและล่าง */
+  border-bottom: 1px solid #fefaf6; /* เส้นแบ่งระหว่างบรรทัด */
+}
+.info-letter {
+  font-weight: bold;
+  text-align: left;
+}
+
+.info-description {
+  text-align: left;
+}
+
+.info-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-card li {
+  margin: 5px 0;
+}
+
+/* UserHistory.js */
+.searchItemOrderId input:focus {
+  border-color: #102c57;
+  outline: none;
+}
+
+.select-wrapper select:focus {
+  border-color: #102c57;
+  outline: none;
+}
+
+.react-datepicker__close-icon {
+  left: auto;         /* ยกเลิกฝั่งซ้าย */
+  right: 0px;         /* ชิดขวา ปรับตัวเลขตามความต้องการ */
+  top: 10px;          /* ไม่ขยับขึ้นกลาง */
+  transform: none;    /* ไม่มีเลื่อนแนวแกน Y */
+}
+.react-datepicker__close-icon::after {
+  background-color: #102c57 !important;
+  color: white; /* เปลี่ยนเป็นสีที่คุณต้องการ */
+  font-size: 16px; /* ปรับขนาดถ้าต้องการ */
+}
+
+.searchItem.clear-icon {
+  position: absolute; /* ใช้ position:absolute เพื่อวางตำแหน่ง */
+  right: 10px;        /* อยู่ทางขวาของ container */
+  top: 50%;           /* ตั้งตำแหน่งแนวตั้งให้ตรงกลาง */
+  transform: translateY(-50%);
+  cursor: pointer;   /* เพิ่ม cursor แบบ pointer */
+}
+
+.notification-popup {
+  position: absolute;
+  top: 80px; /* ปรับตามตำแหน่งที่ต้องการ */
+  right: 18px;
+  width: 250px;
+  padding: 16px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 100;
+}
+
+.notification-title {
+  margin-top: 16px;
+  font-weight: bold;
+  color: #102c57;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.clock-icon {
+  margin-right: 16px;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 7px;
+  margin-top: 8px;
+  margin-right: 8px;
+  cursor: pointer;
+  color: #102c57;
+}
+
+.notification-time {
+  text-align: right;
+  color: #888;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+/* UserFoot3D */
+.footModelImage {
+  width: 300px; /* กำหนดความกว้างของภาพ */
+  height: auto; /* ปรับความสูงตามสัดส่วน */
+  margin: 110px auto; /* ตั้งค่า margin บน-ล่าง 20px และให้ภาพอยู่กึ่งกลางแนวนอน */
+  margin-bottom: 110px;
+  padding: 10px; /* ตั้งค่า padding รอบภาพ */
+  display: block; /* ทำให้ภาพเป็น block element เพื่อง่ายต่อการจัดกึ่งกลาง */
+  border-radius: 10px; /* หากต้องการขอบมุมโค้ง */
+}
+/* signup ~ create account*/
+
+.alert {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+/* Success message */
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+/* Error message */
+.alert-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+}
+
+.alert.error {
+  background-color: #f8d7da; /* สีพื้นหลังสำหรับข้อผิดพลาด */
+  color: #721c24; /* สีข้อความสำหรับข้อผิดพลาด */
+  border: 1px solid #f5c6cb; /* เส้นขอบสำหรับข้อผิดพลาด */
+}
+
+.alert.success {
+  background-color: #d4edda; /* สีพื้นหลังสำหรับความสำเร็จ */
+  color: #155724; /* สีข้อความสำหรับความสำเร็จ */
+  border: 1px solid #c3e6cb; /* เส้นขอบสำหรับความสำเร็จ */
+}
+/* AdFoot */
+.download-btn {
+  font-family: "Sukhumvit Set", sans-serif;
+  width: 100%;
+  padding: 10px;
+  background-color: #102c57;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.footButtonContainer {
+  display: flex;
+  justify-content: center; /* จัดปุ่มให้อยู่กลาง */
+  margin-top: 16px; /* เพิ่มระยะห่างด้านบนของปุ่ม */
+  margin-bottom: 48px;
+}
+
+.leftButton {
+  font-family: "Sukhumvit Set", sans-serif;
+  background: transparent; /* พื้นหลังสีน้ำเงิน */
+  border: 2px solid #102c57;
+  border-radius: 20px 0 0 20px;
+  padding: 10px;
+  padding-left: 50px;
+  font-size: 16px;
+  color:  #102c57; /* สีข้อความขาว */
+}
+
+/* ปุ่มขวา - เริ่มต้นด้วยพื้นหลังโปร่งใส */
+.rightButton {
+  font-family: "Sukhumvit Set", sans-serif;
+  background: transparent;
+  border: 2px solid #102c57;
+  border-radius: 0 20px 20px 0;
+  padding: 10px;
+  padding-right: 50px;
+  font-size: 16px;
+  color: #102c57; 
+}
+
+.activeLeft {
+  background: #102c57;
+  color: #fefaf6;
+}
+
+.activeRight {
+  background: #102c57;
+  color: #fefaf6;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.Ad-subtitle {
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 0;
+}
+
+/*Menu Page*/
+.canvas-container {
+  margin-top: 20px; /* เว้นระยะห่างจากปุ่ม */
+  text-align: center;
+}
+
+.zoomButtonContainer {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* วางปุ่มที่ขวาสุด */
+  transform: translateY(-50%); /* ให้วางตรงกลางแนวตั้ง */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* เพิ่มช่องว่างระหว่างปุ่ม */
+}
+
+.zoomInButton, .zoomOutButton {
+  font-size: 24px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.zoomInButton:hover, .zoomOutButton:hover {
+  background-color: #ddd;
+}
+
+/* Header with Back Icon and Notification */
+.header-with-back-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.back-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.top-right-icon {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Notification Popup */
+.notification-popup {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 10;
+}
+
+.notification-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.clock-icon {
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.notification-time {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #888;
+}
+
+.close-icon {
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Menu Items */
+.menu-container {
+  display: flex;
+  flex-direction: column; /* จัดให้แสดงเป็น 1 การ์ดต่อ 1 บรรทัด */
+  gap: 20px; /* ช่องว่างระหว่างการ์ด */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-bottom: calc(60px + 40px);
+}
+
+.menu-container h1{
+  margin-bottom: 0;
+}
+
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+
+.menu-card .icon {
+  font-size: 36px;
+  color: #102c57
+}
+
+.menu-card .label {
+  font-weight: bold;
+  font-size: 18px;
+  color: #102c57;
+  margin-bottom: 5px; /* ให้มีช่องว่างระหว่าง label และ subtitle */
+}
+
+.menu-card .subtitle {
+  font-size: 16px;
+  color: #333;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+
+/* Style for the Menu Bar */
+.menuBar-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  z-index: 10; /* ให้มันอยู่ต่ำกว่า orderCard */
+  color: #102c57;
+  padding-top: 12px;
+  padding-bottom: 12;
+}
+
+.menuBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menuItem p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.menuItem .subtitle {
+  font-size: 10px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.menuItem .icon {
+  font-size: 24px;
+  color: #102c57
+}
+
+/* User Manual Page*/
+.user-guideline-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #FEFAF6
+}
+
+.user-guideline-image-container {
+  width: 60%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-guideline-image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.user-guideline-title {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+.user-guideline-subtitle {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin-top: 5px;
+}
+
+
+.user-guideline-header {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.user-guideline-skip {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #102c57;
+  cursor: pointer;
+}
+
+.user-guideline-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.user-guideline-back,
+.user-guideline-next {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #102c57;
+  cursor: pointer;
+}
+
+.user-guideline-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.user-guideline-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.user-guideline-active-dot {
+  background-color: #007bff;
+}
+
+/*User Guide*/
+.userGuideContainer {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.guideList {
+  list-style: none;
+  padding: 0;
+}
+
+.guideItem {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.guideItem:hover {
+  background-color: white;
+  transform: translateY(-2px);
+}
+
+.guideLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  font-family: 'Sukhumvit Set', sans-serif;
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 12px;
+  transition: background 0.3s;
+}
+
+.guideIcon {
+  font-size: 22px;
+  color: #102c57;
+  margin-right: 12px;
+}
+
+.dropdownIcon {
+  font-size: 18px;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.guideDetails {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.guideStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.guideDetails p {
+  text-align: left;
+}
+
+.stepImage {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+/*pdpa Page*/
+.userGuideContainer {
+  /* max-width: 800px; */
+  padding-top: 0px;
+  padding-bottom: 20px;
+  background-color: none;
+  border-radius: 16px;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); */
+  font-family: 'Sukhumvit Set', sans-serif;
+  color: #102c57;
+}
+
+/* Header & Navigation */
+.header-with-back-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.back-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #102c57;
+  transition: color 0.3s ease;
+}
+
+.back-icon:hover {
+  color: #0066cc;
+}
+
+.top-right-icon {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.notification-icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: #102c57;
+}
+
+.profile-pic {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #102c57;
+}
+
+.pdpa-section-title {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.pdpa-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 20px 24px;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.3s ease;
+  width: 90%;
+}
+
+/*ถ้ามีเนื้อหาเพิ่มขึ้นค่อยเอากลับมาเพื่อบอกว่าสามารถกดได้*/
+.pdpa-card:hover {
+  /* box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1); */
+}
+
+.pdpa-card .icon-bullet {
+  color: #102c57;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.pdpa-card strong {
+  font-size: 18px;
+  font-weight: 600;
+  color: #102c57;
+}
+
+.pdpa-card p {
+  margin: 0;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Checkbox */
+.pdpa-checkbox-item {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pdpa-checkbox-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #102c57;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.pdpa-checkbox-circle.checked {
+  background-color: #102c57;
+  border-color: #102c57;
+}
+
+.pdpa-checkmark {
+  color: white;
+  font-size: 14px;
+}
+
+.pdpa-checkbox-content a {
+  color: #102c57;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/*OrderHistory Page*/
+.order-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.order-id {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius:16px;
+  font-weight: bold;
+}
+
+.status.รอดำเนินการ {
+  background-color: #FFCC00;
+  color: #fff;
+}
+
+.status.สำเร็จ{
+  background-color: #27AE60; /* สีเขียวสำหรับ 'สำเร็จ' */
+  color: #fff;
+}
+
+.status.ยกเลิก {
+  background-color: #E74C3C; /* สีแดงสำหรับ 'ยกเลิก' */
+  color: #fff;
+}
+
+.order-date {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* ปุ่มต่างๆ */
+.tracking-btn,
+.details-btn {
+  background-color: #102c57;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-family: "Sukhumvit Set", sans-serif;
+}
+
+.tracking-btn:hover,
+.details-btn:hover {
+  background-color: #102c57;
+}
+
+.order-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0;
+  color: #333;
+}
+
+.order-detail {
+  font-size: 14px;
+  color: #333;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+/* สไตล์สำหรับ container ของการ์ดทั้งหมด */
+.orders-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  padding-top: 0;
+  flex-grow: 1; /* ให้ส่วนนี้ขยายพื้นที่ให้เต็ม */
+  overflow-y: auto; /* ให้มีการเลื่อนเมื่อเนื้อหามากเกิน */
+  margin-bottom: 32px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.tracking-btn {
+  background-color: #102c57;
+  color: #fff;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+/* notification Page*/
+.notificationPage {
+  padding: 20px;
+  font-family: 'Sukhumvit Set', sans-serif;
+}
+
+
+/* Container ของการแจ้งเตือน */
+.notificationsContainer {
+  padding: 0px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 60vh; /* ปรับตามต้องการ */
+  overflow-y: auto;
+  padding-bottom: 8px; /* ป้องกันไม่ให้ content ชิดขอบล่าง */
+}
+
+/* การตั้งค่า style สำหรับแต่ละการแจ้งเตือน */
+.notificationCard {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.8;
+}
+
+.notificationCard.new {
+  border-left: 4px solid #27AE60; /* ใช้สีเขียวสำหรับการแจ้งเตือนใหม่ */
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+/* กรอบไอคอนของการแจ้งเตือน */
+.notificationIcon {
+  margin-right: 16px;
+}
+
+.bellIcon {
+  color: #f39c12; /* สัญลักษณ์ใหม่ */
+  font-size: 24px;
+}
+
+.checkIcon {
+  color: #27AE60; /* สัญลักษณ์การแจ้งเตือนที่อ่านแล้ว */
+  font-size: 24px;
+}
+
+/* ข้อความภายในการแจ้งเตือน */
+.notificationContent {
+  flex-grow: 1;
+}
+
+.notificationMessage {
+  font-size: 16px;
+  color: #333;
+  margin: 0 0 5px;
+}
+
+.orderId {
+  flex: 1; /* สั้น */
+}
+
+.username {
+  flex: 1.5; /* ยาวกว่าสองเท่า */
+}
+
+.notificationTime {
+  font-size: 12px;
+  color: #95a5a6;
+  margin-top: 0;
+}
+
+/* ปุ่มลบ/เลือก และ ลบทั้งหมด */
+.notificationActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.notificationActions button {
+  background-color: none;
+  color: #102c57;
+  padding: 8px 12px;
+  cursor: pointer;
+
+}
+
+.notificationActions button:hover {
+  background-color: #0056b3;
+}
+
+.controlText {
+  cursor: pointer;
+  color: #007bff;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+/* ปุ่มลบที่เลือก */
+.deleteSelectedButton {
+  background-color: #dc3545;
+}
+
+.deleteSelectedButton:hover {
+  background-color: #a71d2a;
+}
+
+/* ปุ่มลบทั้งหมด */
+.deleteAllButton {
+  background-color: #ff4444;
+}
+
+.deleteAllButton:hover {
+  background-color: #cc0000;
+}
+
+/* Checkbox */
+.notificationCheckbox {
+  margin-right: 8px;
+  transform: scale(1.2);
+}
+
+/* สีพื้นหลังแจ้งเตือน */
+.notificationCard.new {
+  background-color: white;
+}
+
+.notificationCard.read {
+  background-color: #f1f1f1;
+}
+
+.notificationCard:hover {
+  background-color: #ddd;
+}
+
+/*SettingAcc.js*/
+.input-group {
+  font-family: 'Sukhumvit Set', sans-serif;
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  font-family: 'Sukhumvit Set', sans-serif;
+  font-size: 16px;
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.input-group textarea:focus {
+  border-color: #102c57;
+  outline: none;
+}
+
+.input-group textarea::placeholder {
+  font-family: "Sukhumvit Set", sans-serif;
+  color: #888;
+}
+
+.input-group input {
+  color: #333;
+  font-family: 'Sukhumvit Set', sans-serif; 
+}
+
+.input-group input[type="date"] {
+  background-color: white; /* สีพื้นหลัง */
+  border-radius: 20px; /* มุมโค้ง 20px */
+  padding: 6px; /* เพิ่มช่องว่างภายใน */
+  border: 1px solid #ccc; /* ขอบ */
+  font-family: 'Sukhumvit Set', sans-serif; /* ตั้งค่า font */
+  /* width: 95%; */
+}
+
+/* สำหรับตัวเลือกใน select */
+.select-wrapper-setting select {
+  color: #333;
+}
+
+/* เปลี่ยนสีของ placeholder */
+.input-group input::placeholder {
+  color: #333;
+}
+
+.form-Container {
+  font-family: "Sukhumvit Set", sans-serif;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.form-Container label {
+  font-family: "Sukhumvit Set", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  /* color: #102c57; */
+}
+
+.primary-btn {
+  font-family: "Sukhumvit Set", sans-serif;
+  padding: 8px;
+  background-color: #102c57;
+  color: white;
+  /* border: 1px solid #102c57; */
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 32px;
+}
+.edit-btn {
+  font-family: "Sukhumvit Set", sans-serif;
+  padding: 8px;
+  background-color: transparent;
+  color: #102c57;
+  border: 1px solid #102c57; /* ขอบ */
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.logout-btn {
+  font-family: "Sukhumvit Set", sans-serif;
+  padding: 8px;
+  background-color: transparent;
+  color: red;
+  border: 1px solid red; /* ขอบ */
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+span {
+  font-family: 'Sukhumvit Set', sans-serif; /* กำหนดฟอนต์ให้เป็น Sukhumvit */
+  color: #102c57; /* สีตัวอักษรเป็นสีน้ำเงิน */
+  /* text-decoration: underline;  */
+  cursor: pointer;
+}
+
+span a {
+  font-family: 'Sukhumvit Set', sans-serif ; 
+  text-decoration: none; /* ไม่ให้ลิงก์มีเส้นใต้ */
+  color: #102c57;
+}
+/*UserFoot.js*/
+.CanvasContainer{
+  overflow: hidden;
+}
+
+
+.download-container {
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  margin-top: 20px;         
+}
+
+.downloadButton {
+  font-family: "Sukhumvit Set", sans-serif;
+  background-color: #102c57; /* สีพื้นหลัง */
+  color: white;              /* สีตัวอักษร */
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;        /* ทำให้ขอบโค้งมน */
+  cursor: pointer;
+  transition: all 0.3s ease; /* ทำให้เอฟเฟกต์ smooth */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูนูนขึ้น */
+}
+
+.downloadButton:hover {
+  background-color: #102c57; /* เปลี่ยนสีเมื่อ hover */
+  transform: scale(1.05);    /* ขยายเล็กน้อยเมื่อ hover */
+}
+
+
+.edit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.edit-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #102c57;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edit-icon {
+  font-size: 18px;
+}
+
+.edit-text {
+  text-decoration: underline;
+}
+
+.edit-link:hover {
+  color: #0056b3;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  position: relative; /* ทำให้ลูกที่ใช้ position: absolute อยู่ภายใน popup นี้ */
+  background: white;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  font-family: 'Sukhumvit Set', sans-serif ;
+}
+
+.popup-title {
+  font-size: 18px;
+  padding: 24px;
+  margin: 0;
+}
+
+.popup-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  padding: 24px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.popup-icon {
+  padding: 16px;
+  font-size: 24px; /* ขนาดไอคอน สามารถปรับได้ตามต้องการ */
+  color: #102c57;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  font-family: 'Sukhumvit Set', sans-serif ;
+}
+
+.confirm-btn, .cancel-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  flex: 1;
+  margin: 5px;
+  font-family: 'Sukhumvit Set', sans-serif ;
+}
+
+.confirm-btn {
+  background-color: white;
+  color: #102c57;
+  border: 1px solid #102c57; /* ขอบ */
+}
+
+.cancel-btn {
+  background-color: #102c57;
+  color: white;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+
+
+/*AdFoot.js*/
+.download-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.download-3d-button {
+  font-family: 'Sukhumvit Set', sans-serif ; 
+  padding: 8px 20px;
+  background-color: #102c57;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 95%;
+  margin-top: 48px;
+}
+
+.subtitleAdFoot p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+/*Insole.js*//* globals.css */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background */
+  z-index: 1000; /* Ensure modal is on top */
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.close {
+  font-size: 24px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.close:hover {
+  color: black;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.confirmButton, .cancelButton {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.confirmButton {
+  font-family: 'Sukhumvit Set', sans-serif ;
+  background-color: #102c57;
+  color: white;
+}
+
+.cancelButton {
+  font-family: 'Sukhumvit Set', sans-serif ;
+  background-color: #102c57;
+  color: white;
+}
+
+.insole-container {
+  /* max-width: 600px; */
+  padding: 16px;
+  border-radius: 10px;
+  font-family: "Sukhumvit Set", sans-serif;
+  padding-top: 0;
+}
+
+.insole-container h1{
+  margin: 0;
+  margin-top: 16px;
+}
+
+/* Header แสดงโมเดล */
+.model-header {
+  font-family: "Sukhumvit Set", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  /* background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); */
+}
+
+.current-model {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+.view-model {
+  font-size: 16px;
+  background-color: #102c57;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Order card */
+.order-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Order information */
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ข้อมูลผู้สั่ง */
+.order-user span {
+  display: block;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* ควบคุมจำนวน */
+.order-quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-quantity span{
+  color: #333;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-btn {
+  background: none;
+  color: #102c57;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.qty-number {
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* ส่วนลด */
+.order-discount {
+  font-family: "Sukhumvit Set", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.order-discount label {
+  font-size: 14px;
+  color: #333;
+}
+
+.discount-input {
+  width: 80px;
+  padding: 6px 8px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* สรุปราคา */
+.order-summary p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #333;
+  font-family: "Sukhumvit Set", sans-serif;
+}
+
+/* ที่อยู่สำหรับจัดส่ง */
+.order-address {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-address input:focus{
+  border-color: #102c57;
+  outline: none;
+}
+
+.order-address .address-label label{
+  font-size: 16px;
+}
+
+.address-label {
+  font-family: "Sukhumvit Set", sans-serif;
+  display: flex;
+  align-items: center; /* จัด label และ icon ให้อยู่แนวเดียวกัน */
+  justify-content: space-between;
+  gap: 8px; /* ระยะห่างระหว่าง label กับ icon */
+}
+
+.edit-address-icon {
+  cursor: pointer;
+  color: #102c57;
+  transition: color 0.3s ease;
+}
+
+.order-address label {
+  font-size: 14px;
+  color: #333;
+}
+
+.address-input, 
+.address-select {
+  height: 100px; 
+  font-family: "Sukhumvit Set", sans-serif;
+  width: 100%;       /* กว้างเต็ม container */
+  padding: 8px;      /* ระยะห่างภายใน */
+  border-radius: 20px; /* มุมโค้ง */
+  border: 1px solid #ccc; /* ขอบสีเทา */
+  background-color: white; /* พื้นหลังสีขาว */
+  font-size: 16px;   /* ขนาดตัวอักษร */
+  outline: none;     /* ไม่มีเส้นขอบตอน focus */
+  white-space: normal; /* ทำให้ข้อความขึ้นบรรทัดใหม่ได้ */
+  align-items: start;
+}
+
+/* ปุ่มยืนยันการสั่งซื้อ */
+.confirm-order-btn {
+  font-family: "Sukhumvit Set", sans-serif;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #102c57;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* ตั้งค่าหลักสำหรับ div ของราคาทั้งหมด */
+.order-price {
+  border-radius: 8px;
+  justify-content: space-between; /* จัดระเบียบด้านซ้าย-ขวา */
+}
+
+.price-details {
+  display: flex;
+  justify-content: space-between; /* ให้ชื่อรายการอยู่ซ้าย ตัวเลขอยู่ขวา */
+  align-items: center;
+  padding-top: 16px;
+  font-size: 16px;
+  color: #333;
+}
+
+.price-details span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-price .price-details span {
+  font-weight: normal;
+}
+
+/* ตั้งค่าผลลัพธ์เมื่อแสดงราคาต่อชิ้น, ค่าส่ง, และราคารวม */
+.order-price .price-details span {
+  font-size: 16px;
+  color: #333;
+}
+
+.order-price .price-details span:last-child {
+  font-weight: bold;
+  color: #102c57; /* สีแดงสำหรับราคารวม */
+}
+
+/* ตั้งค่าให้ปุ่มยืนยันการสั่งซื้อ */
+.confirm-order-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #102c57;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* ปรับแต่ง select และ input สำหรับที่อยู่ */
+.address-select,
+.address-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.address-select:focus,
+.address-input:focus {
+  border-color: #102c57; /* เปลี่ยนสีเมื่อเลือกหรือกรอกข้อมูล */
+  outline: none;
+  border-radius: 5px;
+}
+
+/* สไตล์สำหรับ icon แก้ไขที่อยู่ */
+.edit-address-icon {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 18px;
+  color: #102c57;
+  transition: color 0.3s ease;
+}
+
+button {
+  background-color: #102c57;
+  color: white; /* White text */
+  /* padding: 12px 24px; */
+  font-size: 16px; /* Font size */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor when hovered */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth background change and slight scaling */
+}
+
+button:disabled {
+  background-color: #d3d3d3; /* Light gray background */
+  color: #a1a1a1; /* Gray text */
+  cursor: not-allowed; /* Cursor indicating disabled button */
+}
+
+button.save-address-btn {
+  font-family: "Sukhumvit Set", sans-serif;
+  background-color: #102c57;
+}
+
+button.save-address-btn {
+  margin-top: 16px;
+}
+
+/*InsoleOrder.js*/
+.tableContainer {
+  overflow-x: auto; 
+}
+
+.table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.table th,
+.table td {
+  
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.table th {
+  background-color: white;
+  color: #102c57;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+.table td {
+  
+  background-color: white;
+  color: #102c57;
+  font-weight: bold;
+}
+
+.table tr:nth-child(odd) {
+  background-color: white;
+}
+
+.table tr:hover {
+  background-color: #d4d9e2;
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.pagination button {
+  font-family: "Sukhumvit Set", sans-serif;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+  color: #102c57;
+}
+
+.pagination button:focus{
+  color: white;
+  background-color: #102c57;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.status-paid{
+  color: green;
+}
+.status-unpaid{
+  color: red;
+}
+
+.change-status-btn {
+  font-family: "Sukhumvit Set", sans-serif;
+  padding: 8px 20px;
+  width: 100%;
+  border: 2px solid #27AE60; 
+  background-color: white;  
+  color: #27AE60;           
+  font-size: 16px;
+  border-radius: 5px;        
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.change-status-btn:hover {
+  background-color: #27AE60; 
+  color: white;              
+}
+
+/*FootView.js*/
+.footView-container {
+  padding: 0px 20px 20px 20px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  font-family: "Sukhumvit Set", sans-serif;
+  width: 100%;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.tableContainer {
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  text-align: center;
+  border: 1px solid #dcdcdc; /* สีเทาอ่อน */
+  border-radius: 8px; /* มุมโค้ง */
+}
+
+th, td {
+  
+  padding: 12px 15px;
+  text-align: left;
+}
+
+th {
+  background-color: white; /* สีพื้นหลังของหัวตาราง */
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f9f9f9; 
+}
+
+.view-btn {
+  font-family: "Sukhumvit Set", sans-serif;
+  background-color: #102c57;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border: 1px solid #dcdcdc; /* สีเทาอ่อน */
+  border-radius: 8px; /* มุมโค้ง */
+  cursor: pointer;
+}
+.model-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.text-gray-500 {
+  color: #b0b0b0;
+}
+
+.pagination button:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.pagination button.active {
+  background-color: #102c57;
+  color: white;
+}
+
+.input-container {
+  position: relative;
+  display: inline-block;
+}
+
+.input-container input[type="text"] {
+  padding-left: 40px; /* เพิ่มช่องว่างด้านซ้ายสำหรับไอคอน */
+  width: 100%; /* ความกว้างของ input */
+  height: 40px; /* เพิ่มความสูงของ input */
+  font-size: 16px; /* ขนาดฟอนต์ */
+  border-radius: 20px; /* ขอบโค้ง */
+  border: 1px solid #ccc; /* ขอบของช่อง input */
+  outline: none; /* เอาการกรอบออกเมื่อคลิก */
+  color: #333;
+}
+
+.input-container input[type="text"]:focus {
+  border-color: #102c57; /* เปลี่ยนสีขอบเมื่อคลิก */
+}
+
+.search-icon {
+  position: absolute;
+  top: 40%;
+  margin-right: 16px;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #102c57;
+}
+

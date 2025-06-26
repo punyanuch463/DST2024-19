@@ -1,0 +1,357 @@
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 20px;
+}
+.detailed {
+  display: flex;
+  justify-content: flex-start;
+}
+.detailed-text {
+  font-size: 18px;
+  text-decoration: underline;
+  color: #333;
+  margin-top: 5px;
+}
+
+.infButton {
+  margin-left: 10px;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  color: #102C57;
+}
+
+.foot-size-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.foot-size-form__image {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.foot-size-form__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.foot-size-form__labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.foot-size-form__label {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.foot-size-form__measurements {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.foot-size-form__measurement {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.foot-size-form__measurement label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.foot-size-form__measurement input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100px;
+}
+
+.foot-size-form__buttons {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.foot-size-form__buttons button {
+  padding: 10px 60px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: solid 1px;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-family: "Sukhumvit Set", sans-serif;
+}
+
+.foot-size-form__buttons button:last-child {
+  background-color: #102c57;
+  color: #fff;
+}
+
+.foot-measurement-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.foot-measurement-table th,
+.foot-measurement-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.foot-measurement-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.slideshow {
+  transition: transform 0.5s ease;
+}
+
+.tapbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tap {
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.tap.active {
+  background-color: #0070f3;
+  color: white;
+}
+
+/*เพลง*/
+.measurements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px; /* ระยะห่างระหว่างกล่อง */
+  margin-top: 20px;
+}
+
+.measurement-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.measurement-field label {
+  margin-bottom: 4px; /* ระยะห่างระหว่าง label และ input */
+}
+
+.foot-size-form__measurements {
+  margin: 16px;
+}
+
+.foot-size-form__measurements input {
+  background-color: #e0e0e0;
+}
+.measurement-field input {
+  /* สีพื้นฐานของ input */
+  background-color: lightgray; /* สีเทาเมื่อไม่สามารถแก้ไขได้ */
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  font-family: "Sukhumvit Set", sans-serif;
+}
+
+.measurement-field input:focus {
+  border-color: #0070f3; /* สีของ border เมื่อ input ถูกเลือก */
+}
+
+.measurement-field input[readonly] {
+  background-color: #e0e0e0; /* สีเทาเมื่อไม่สามารถแก้ไขได้ */
+  cursor: not-allowed; /* เปลี่ยน cursor เพื่อแสดงว่าไม่สามารถแก้ไขได้ */
+  border-radius: 20px;
+}
+
+.measurement-field input:not([readonly]) {
+  background-color: white; /* สีขาวเมื่อสามารถแก้ไขได้ */
+  border-radius: 20px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* พื้นหลังแบบโปร่งใส */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* ให้ป๊อปอัปอยู่ด้านหน้าสุด */
+  padding: 20px;
+}
+
+.popupContent {
+  position: relative; /* กำหนดให้ closeIcon อ้างอิงจาก popupContent */
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #102C57;
+}
+
+.closeIcon:hover {
+  color: #000;
+}
+
+
+.popupTitleContainer {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center;
+  margin-bottom: 10px; 
+}
+
+.popupTitle {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+.questionIcon {
+  font-size: 32px;
+  margin-bottom: 5px; 
+  color: #102C57;
+}
+
+.popupSubtitle{
+  margin-top: 0;
+}
+
+.popupButtons {
+  margin-top: 0px;
+}
+
+.popupButtons {
+  font-family: "Sukhumvit Set", sans-serif;
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
+  margin-top: 24px;
+}
+
+.confirmButton {
+  font-family: "Sukhumvit Set", sans-serif;
+  background-color: white;
+  border: 1px solid #102C57;
+  color: #102c57;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cancelButton {
+  font-family: "Sukhumvit Set", sans-serif;
+  background-color: #102c57;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* เพิ่ม CSS สำหรับปุ่ม */
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-button {
+  background-color: #FEFAF6;
+  border: none;
+  color: #102C57;
+  border-radius: 50%; 
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/*UserFoot3D*/
+.footButtonContainer {
+  display: flex;
+  justify-content: center; 
+  margin-top: 20px; 
+  margin-bottom: 40px; 
+}
+
+.leftButton {
+  font-family: "Sukhumvit Set", sans-serif;
+  background: transparent;
+  border: 2px solid #102C57;
+  border-radius: 20px 0 0 20px; 
+  padding: 10px;
+  padding-left: 50px; 
+  font-size: 16px; 
+  color: #102C57;
+}
+
+.rightButton {
+  font-family: "Sukhumvit Set", sans-serif;
+  background: #102C57;
+  border: 2px solid #102C57;
+  border-radius: 0 20px 20px 0; 
+  padding: 10px;
+  padding-right: 50px;
+  font-size: 16px; 
+  color: #FEFAF6;
+}

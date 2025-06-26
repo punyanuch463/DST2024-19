@@ -1,0 +1,120 @@
+
+ .footTexth1{
+  font-size: 24px;
+  color: #333;
+  margin-top: 10px;
+  text-align: center
+ }
+
+ .footText {
+  font-size: 14px;
+  color: #333;
+  margin-top: 10px;
+  text-align: center
+}
+ .camera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.frame-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.take-photo-button {
+  margin-top: 100px;
+  width: 70px; /* ขนาดของวงกลม */
+  height: 70px;
+  border-radius: 50%; /* ทำให้เป็นวงกลม */
+  background-color: white; /* สีพื้นหลัง */
+  border: 2px solid #333; /* สีขอบ */
+  align-items: center;
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อวางเมาส์ */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* เงาเล็กน้อย */
+  transition: background-color 0.3s, transform 0.2s; /* การเปลี่ยนแปลงที่ราบรื่น */
+
+}
+
+.take-photo-button:hover {
+  background-color: #0056b3;
+}
+
+.canvas {
+  display: none;
+}
+
+.photo {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  margin-top: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+}
+
+
+.backButton {
+  margin-top: 44px;
+  margin: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.footInFrameAlert {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 255, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+
+.footer {
+  height: 200px;
+  background-color: #adaaaa;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  position: relative;
+  margin-top: 150px;
+
+}

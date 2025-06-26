@@ -1,0 +1,310 @@
+import { useRouter } from "next/router";
+
+import { VscHome, VscAccount} from "react-icons/vsc";
+import withAuthAdmin from "../../hoc/withAuthAdmin";
+import "react-datepicker/dist/react-datepicker.css";
+import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { updatePageTitle } from "../../utils/routeTitle";
+
+const NotificationPage = ({ orderID, status, date }) => {
+  const router = useRouter();
+  const [PathProfileImage, setPathProfileImage] = useState(
+    "/default-profile.png"
+  );
+  const [AdminID, setAdminID] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+
+  useEffect(() => {
+    updatePageTitle(router.pathname);
+    const handleRouteChange = (url) => {
+      updatePageTitle(url);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router]);
+
+  const menuBarItems = [
+    {
+      icon: <VscHome />,
+      label: "หน้าหลัก",
+      action: () => router.push("/AdminPage/HomePage"),
+    },
+    {
+      icon: <VscAccount />,
+      label: "โปรไฟล์",
+      action: () => router.push("/AdminPage/EditAcc"),
+    },
+  ];
+  const [notifications, setNotifications] = useState([]);
+  const [selectedNotifications, setSelectedNotifications] = useState([]);
+
+  useEffect(() => {
+    const fetchSessionData = async () => {
+      try {
+        const sessionRes = await fetch("/api/admin/getSessionadmin");
+        const sessionData = await sessionRes.json();
+        if (sessionRes.ok && sessionData.AdminID) {
+          setAdminID(sessionData.AdminID);
+          fetchAdminData(sessionData.AdminID);
+        }
+      } catch (error) {}
+    };
+
+    const fetchAdminData = async (AdminID) => {
+      try {
+        const response = await fetch(`/api/admin/getAdmin`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ AdminID: AdminID }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setPathProfileImage(
+            data[0].PathProfileImage || "/default-profile.png"
+          );
+        }
+      } catch (error) {
+        "Error fetching Admin data:", error;
+      }
+    };
+
+    fetchSessionData();
+  }, []);
+  useEffect(() => {
+    if (AdminID) {
+      const fetchNotifications = async () => {
+        try {
+          const response = await fetch(`/api/admin/notificationAdmin`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              "Admin-ID": AdminID,
+            },
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            if (data.notifications && data.notifications.length > 0) {
+              setNotifications(data.notifications);
+            } else {
+              setNotifications([]);
+            }
+          }
+        } catch (error) {}
+      };
+
+      fetchNotifications();
+    }
+  }, [AdminID]);
+
+  const markAsRead = async (id) => {
+    try {
+      const response = await fetch(`/api/admin/notificationAdmin`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ notificationId: id }),
+      });
+
+      if (response.ok) {
+        setNotifications((prev) =>
+          prev.map((n) =>
+            n.NotificationID === id ? { ...n, isRead: true } : n
+          )
+        );
+      }
+    } catch (error) {}
+  };
+
+  const [isSelecting, setIsSelecting] = useState(false);
+
+  const toggleSelecting = () => {
+    setIsSelecting(!isSelecting);
+    setSelectedNotifications([]);
+  };
+
+  const toggleSelectNotification = (id) => {
+    setSelectedNotifications((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
+
+  const deleteSelectedNotifications = async () => {
+    if (selectedNotifications.length === 0) return;
+
+    try {
+      const response = await fetch(`/api/admin/notificationAdmin`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ notificationIds: selectedNotifications }),
+      });
+
+      if (response.ok) {
+        setNotifications((prev) =>
+          prev.filter((n) => !selectedNotifications.includes(n.NotificationID))
+        );
+        setSelectedNotifications([]);
+        setIsSelecting(false);
+      }
+    } catch (error) {}
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleSave = () => {
+    setModalMessage("ต้องการลบการแจ้งเตือนทั้งหมด หรือไม่?");
+    setIsModalOpen(true);
+  };
+
+  const deleteAllNotifications = async () => {
+    try {
+      const response = await fetch(`/api/user/notificationUser`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ deleteAll: true, userId }),
+      });
+
+      if (response.ok) {
+        setNotifications([]);
+      } else {
+        console.error("Error deleting all notifications");
+      }
+    } catch (error) {
+      console.error("Error deleting all notifications:", error);
+    }
+
+    setIsModalOpen(false);
+  };
+
+  const formatDateTime = (dateTimeString) => {
+    const dateObj = new Date(dateTimeString);
+    const year = dateObj.getFullYear() + 543;
+    const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+    const day = String(dateObj.getDate()).padStart(2, "0");
+    const hours = String(dateObj.getHours()).padStart(2, "0");
+    const minutes = String(dateObj.getMinutes()).padStart(2, "0");
+
+    return `${year}-${month}-${day} Time: ${hours}.${minutes}`;
+  };
+
+  const handleProfileClick = () => {
+    router.push("/AdminPage/EditAcc");
+  };
+
+  return (
+    <div className="historyPage">
+      <div className="header-with-back-icon">
+        <FontAwesomeIcon
+          icon={faArrowLeft}
+          className="back-icon"
+          onClick={() => router.push("/AdminPage/HomePage")}
+        />
+        <div className="top-right-icon">
+          <img
+            src={PathProfileImage}
+            alt="Profile"
+            className="profile-pic"
+            onClick={handleProfileClick}
+          />
+        </div>
+      </div>
+
+      <div className="searchBar">
+        <h1>การแจ้งเตือน</h1>
+      </div>
+      <div className="notificationActions">
+        {isSelecting ? (
+          <>
+            <span
+              onClick={deleteSelectedNotifications}
+              className="controlText"
+              disabled={selectedNotifications.length === 0}
+            >
+              ลบที่เลือก
+            </span>
+            <span onClick={handleSave} className="controlText">
+              ลบทั้งหมด
+            </span>
+            <span onClick={toggleSelecting} className="controlText cancelText">
+              ยกเลิก
+            </span>
+          </>
+        ) : (
+          <span onClick={toggleSelecting} className="controlText">
+            เลือก
+          </span>
+        )}
+      </div>
+
+      <div className="notificationsContainer">
+        {notifications.map((notification) => (
+          <div
+            key={notification.NotificationID}
+            className={`notificationCard ${
+              notification.isRead ? "read" : "new"
+            }`}
+            onClick={() =>
+              !isSelecting && markAsRead(notification.NotificationID)
+            }
+          >
+            <div className="notificationContent">
+              <p className="notificationMessage">{notification.Message}</p>
+
+              <p className="orderID">รหัสการสั่ง: {notification.OrderID}</p>
+              <p className="notificationTime">
+                {formatDateTime(notification.NotificationDateTime)}
+              </p>
+            </div>
+
+            {isSelecting && (
+              <input
+                type="checkbox"
+                className="notificationCheckbox"
+                checked={selectedNotifications.includes(
+                  notification.NotificationID
+                )}
+                onChange={() =>
+                  toggleSelectNotification(notification.NotificationID)
+                }
+              />
+            )}
+          </div>
+        ))}
+      </div>
+      <div className="menuBar-container">
+        <div className="menuBar">
+          {menuBarItems.map((item, index) => (
+            <div key={index} className="menuItem" onClick={item.action}>
+              {item.icon}
+              <p>{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modalContent">
+            <p>{modalMessage}</p>
+            <button className="confirmButton" onClick={deleteAllNotifications}>
+              ตกลง
+            </button>
+            <button className="cancelButton" onClick={handleCloseModal}>
+              ยกเลิก
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default withAuthAdmin(NotificationPage);

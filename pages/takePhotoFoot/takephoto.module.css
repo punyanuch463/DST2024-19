@@ -1,0 +1,300 @@
+
+.main {
+  font-family: "Sukhumvit Set", sans-serif;
+}
+
+.footTextTitle{
+  font-weight:900;
+  font-size: 24px;
+  color: #333;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 0px;
+ }
+
+ .footTextSubTitle {
+  font-size: 18px;
+  color: red;
+  margin-top: 10px;
+  text-align: center
+}
+ .camera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* .video-wrapper {
+  position: relative;
+  width: 350px; /
+  height: 450px;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #000; 
+} */
+
+.video-wrapper {
+  position: relative;
+  height: 450px; /* กำหนดความสูง */
+  overflow: hidden;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-wrapper video {
+  width: 100%; /* ปรับขนาดวิดีโอให้พอดีกับกรอบ */
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 10px;
+}
+
+.toggle-camera-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+/* .video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; */
+  /* transform: scaleX(-1); */
+/* } */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.frame-line {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7; /* เพิ่มความโปร่งใสของกรอบ */
+}
+
+.take-photo-button {
+  margin-top: 30px;
+  width: 70px; /* ขนาดของวงกลม */
+  height: 70px;
+  border-radius: 50%; /* ทำให้เป็นวงกลม */
+  background-color: white; /* สีพื้นหลัง */
+  border: 2px solid #333; /* สีขอบ */
+  align-items: center;
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อวางเมาส์ */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* เงาเล็กน้อย */
+  transition: background-color 0.3s, transform 0.2s; /* การเปลี่ยนแปลงที่ราบรื่น */
+
+}
+
+.canvas {
+  display:contents  ;
+}
+
+.photo {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+  margin-top: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+}
+
+.backIcon {
+  width: 14px;
+  height: 16px;
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อวางเมาส์ */
+  color: #102C57; /* สีของไอคอน */
+  font-size: 24px; /* ขนาดของไอคอน */
+  padding: 20px;
+  margin-top: 40px;
+  transition: color 0.3s ease, transform 0.2s ease; /* การเปลี่ยนสีและขนาดที่ราบรื่นเมื่อโฮเวอร์ */
+}
+
+
+.footInFrameAlert {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 255, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+
+.footer {
+  background-color: #adaaaa;
+  color: white;
+  text-align: center;
+  line-height: 60px;
+  position: relative;
+  margin-top: 20px;
+
+}
+
+.zoomControls {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.zoomBtn {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #102c57;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.zoomBtn:hover {
+  background-color: #0b1a3b;
+}
+
+.infoContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 10px;
+  padding-left: 24px;
+  justify-content: flex-start;
+  padding-right: 24px;
+}
+
+.infoIcon {
+  font-size: 18px;
+  color: #102C57;
+  margin-right: 5px;
+
+}
+
+.infoText {
+  font-size: 16px;
+  color: #102C57;
+  text-decoration: underline;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupContent {
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  max-width: 400px;
+  width: 90%;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popupTitle {
+  font-size: 20px;
+  padding: 16px 16px 0px 16px;
+  margin: 0;
+}
+
+.popupText {
+  font-size: 16px;
+  padding: 16px;
+  margin: 0;
+}
+
+.footImageContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footImage {
+  width: 120px;
+  height: auto;
+  width: 110px;
+  height: 170px;
+}
+
+.footLabel {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.captureButton {
+  background: #102C57;
+  border: none;
+  padding: 24px;
+  margin: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+  width: 60px;
+  height: 60px;
+}
+
+.captureButton:hover {
+  background: #0056b3;
+}
+
+.cameraIcon {
+  font-size: 24px;
+  color: white;
+}
+
+.guidelineTextContainer {
+  margin-top: 24px;
+  text-align: center;
+  margin-bottom: 24;
+}
+
+.guidelineText {
+  text-decoration: underline;
+  color: #102c57;
+  cursor: pointer;
+}
+

@@ -1,0 +1,147 @@
+
+.main {
+  font-family: "Sukhumvit Set", sans-serif;
+}
+
+
+.imagePreviewContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+/* .container {
+  text-align: center;
+
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.footTextTitle {
+  font-weight: 900;
+  font-size: 24px;
+  color: #333;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.footTextSubTitle {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+  text-align: center;
+  color: #139e41;
+}
+
+.footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.verityfoot {
+  margin-top: 50px;
+  text-align: center;
+  color: #139e41;
+}
+
+.title {
+  font-size: 24px;
+  color: #333;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.description {
+  margin: 20px 0;
+}
+
+.imageContainer {
+  position: relative;
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+width: 350px;
+height: 400px;
+  border-radius: 10px;
+}
+
+.frameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  height: 400px;
+  position: relative;
+  object-fit: contain;
+}
+
+.frameLine {
+  width: 250px;
+  height: 350px;
+  position: absolute;
+  background-color: transparent;
+  margin: 20px;
+}
+
+/*frame ใช้ ห้ามลบ*/
+.capturedImage {
+  margin: 20px;
+  object-fit: fill; 
+  width: 250px;
+  height: 350px; 
+}
+
+.backIcon {
+  width: 14px;
+  height: 16px;
+  cursor: pointer;
+  color: #102c57;
+  font-size: 24px;
+  padding: 20px;
+  margin-top: 40px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.capture {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirmBtn {
+  background-color: #102c57;
+  color: #FEFAF6;
+  border: none;
+  padding: 12px 50px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  font-size: 16px;
+  font-family: 'Sukhumvit Set', sans-serif;
+}
+
+.retakeBtn {
+  background-color: transparent;
+  color: #102c57;
+  border: 2px solid #102c57; /* เพิ่มกรอบสี */
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  font-size: 16px;
+  font-family: 'Sukhumvit Set', sans-serif;
+}
