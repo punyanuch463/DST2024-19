@@ -4,12 +4,11 @@
 
 - เริ่มจากการ clone git repository
 ```
-https://github.com/MUICT-SeniorProject/SP2024-DST-FootScanner-Backend.git
+https://github.com/punyanuch463/DST2024-19.git
 ```
 
-  ![image](https://github.com/user-attachments/assets/bde0d99e-d793-489a-91f2-d57872f6e8b3)
-
-- เข้า Mysql เพื่อ Run Foot3DModelData_Final.sql กด Run All 1 ครั้ง เพื่อลง Database
+- เข้า folder /Soucre  codes เพื่อ เตรียมโปรเจค สำหรับการทำงาน ```   https://github.com/punyanuch463/DST2024-19/tree/master/Soucre%20codes  ```
+- เข้า Mysql เพื่อ Run Foot3DModelData_Final.sql กด Run All 1 ครั้ง เพื่อลง Database ```  https://github.com/punyanuch463/DST2024-19/blob/master/Soucre%20codes/Foot3DModelData_Final.sql ```
 - หลังจากนั้นเข้าสู่ code ด้วย vs code และกดเพื่อเข้า terminal สำหรับ set up ตัว node_module 
 - ตัว node_modules ได้มีการอัปโหลดไปแล้ว npm install -package-  ไม่ต้องทำการลงเพิ่ม หากไม่สามารถใช้งานได้ ให้ลงตาม
 
@@ -31,7 +30,7 @@ npm run dev
 
 ## API Document
 
-https://github.com/MUICT-SeniorProject/SP2024-DST-FootScanner-Backend/blob/main/API%20Document.md
+https://github.com/punyanuch463/DST2024-19/blob/master/Manual/API%20Document.md
 
 ## ส่วนเชื่อมต่อ API External
 
